@@ -1,5 +1,15 @@
+const invariant = (expression, message) => {
+	if (expression === false) {
+		throw new Error(message)
+	}
+}
+
 class Item {
-  constructor(name, sellIn, quality){
+	constructor(name, sellIn, quality) {
+    invariant(typeof name === "string", "name should be a string")
+    invariant(typeof sellIn === "number", "sellIn should be a number")
+    invariant(typeof quality === "number" && quality >= 0, "quality should be a number >= 0")
+    
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
