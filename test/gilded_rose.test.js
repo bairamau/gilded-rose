@@ -28,7 +28,7 @@ describe("Gilded Rose", () => {
 		expect(shop.items[0].quality).toBe(0)
 	})
 
-	test("the quality of an item is cannot go lower than 0", () => {
+	test("the quality of an item cannot go lower than 0", () => {
 		const shop = new Shop([new Item('beer', 0, 1)])
 		shop.updateQuality()
 		shop.updateQuality()
