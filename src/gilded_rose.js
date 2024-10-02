@@ -34,6 +34,10 @@ class Shop {
 				case "Aged Brie":
 					item.quality += 1
 					break
+				case "Conjured Mana Cake":
+					if(item.sellIn <= 0) item.quality -= 4
+					else item.quality -= 2
+					break
 				default:
 					if(item.sellIn <= 0) item.quality -= 2
 					else item.quality -= 1

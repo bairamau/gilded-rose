@@ -99,4 +99,14 @@ describe("Gilded Rose", () => {
 		expect(sulfuras.sellIn).toBe(100)
 		expect(sulfuras.quality).toBe(100)
 	})
+
+	test("Conjured items degrade in quality twice as fast", () => {
+		const shop = new Shop([new Item('Conjured Mana Cake', 1, 12)])
+		cake = shop.items[0]
+		shop.updateQuality()
+		expect(cake.quality).toBe(10)
+
+		shop.updateQuality()
+		expect(cake.quality).toBe(6)
+	})
 })
